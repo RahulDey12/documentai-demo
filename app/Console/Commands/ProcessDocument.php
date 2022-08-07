@@ -20,8 +20,8 @@ class ProcessDocument extends Command
     public function handle(): int
     {
         $tables = (new DocumentAi)
-            ->process(Storage::disk('public')->get('test.pdf'))
-            ->extractTable();
+            ->process(Storage::disk('public')->get('test.jpg'), 'image/jpeg')
+            ->extractTables();
 
         dd(collect($tables)->flatten(1));
 

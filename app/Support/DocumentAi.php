@@ -52,7 +52,7 @@ class DocumentAi
         return $this;
     }
 
-    public function extractTable(): array
+    public function extractTables(): array
     {
         if (! isset($this->document)) {
             throw new \Exception('Cannot extract table when document is not initialized.');
